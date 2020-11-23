@@ -2,4 +2,9 @@
     <qresource prefix="/fonts">
         <file>fonts/komika-hand.ttf</file>
     </qresource>
+    <qresource prefix="/images">
+        <file>images/chat.png</file>
+        <file>images/games.png</file>
+        <file>images/groups.png</file>
+    </qresource>
 </RCC>

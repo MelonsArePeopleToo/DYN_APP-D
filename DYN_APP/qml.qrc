@@ -2,8 +2,10 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>LoginPage.qml</file>
-        <file>MainPage.qml</file>
-        <file>StartPage.qml</file>
+        <file>PageChat.qml</file>
+        <file>AppMenu.qml</file>
+        <file>AppsIcons.qml</file>
+        <file>PageMenu.qml</file>
     </qresource>
     <qresource prefix="/fonts"/>
 </RCC>

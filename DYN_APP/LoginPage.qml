@@ -7,6 +7,7 @@ Page {
     id: root
 
     property alias backColor: _backRect.color
+    signal buttonClicked();
 
     background: Rectangle {
         id: _backRect
@@ -16,11 +17,6 @@ Page {
         id: _loginCol
         spacing: defMargin
         anchors.fill: parent
-
-        Layout.fillHeight: true
-        Layout.fillWidth: true
-        Layout.minimumHeight: 300
-        Layout.minimumWidth: 200
 
         Item {
             height: 20
@@ -42,6 +38,7 @@ Page {
             color: textColor
             font.family: "cousine"
             font.bold: true
+            leftPadding: defMargin
 
         }
 
@@ -54,7 +51,7 @@ Page {
             Layout.fillWidth: true
 
             background: Rectangle {
-                color: fieldBgColor1
+                color: fieldBgColor
             }
 
         }
@@ -64,6 +61,7 @@ Page {
             color: textColor
             font.family: "cousine"
             font.bold: true
+            leftPadding: defMargin
 
         }
 
@@ -76,7 +74,7 @@ Page {
             Layout.fillWidth: true
 
             background: Rectangle {
-                color: fieldBgColor1
+                color: fieldBgColor
             }
 
         }
@@ -101,7 +99,7 @@ Page {
                 flat: true
 
                 onClicked: {
-                    _stackView.push(_mainPage);
+                    root.buttonClicked();
                 }
             }
 
