@@ -6,59 +6,83 @@ import QtQuick.Layouts 1.12
 Page {
     id: root
 
-    property alias backColor: _backRect.color
+    property alias backMainColor:_backRect.color
+
+    property alias backChildColor: _backChildRect.color
+    property alias laySpacing: _rowLay.spacing
+
+
     signal buttonClicked();
 
+    background: Rectangle {
+        id: _backRect
+    }
 
+    RowLayout {
+        id: _rowLay
+        anchors.fill: parent
 
         Rectangle {
-            id: _backRect
-            color: bgColor
-            anchors.fill: parent
+            color: "transparent"
+            Layout.fillHeight: true
+            Layout.preferredWidth: 60
 
-            RowLayout {
-               anchors.fill: parent
+            ColumnLayout {
+                id: menuPanel
+            }
+        }
 
-               Rectangle {
-                   id: _lol
+        Rectangle {
+            id: _backChildRect
+            color: "red"
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            Layout.minimumWidth: 200
+            radius: 10
 
-                   //visible: false
-                   Layout.fillHeight: true
-                   Layout.alignment: Qt.AlignLeft
-                   Layout.preferredWidth: _menu.width > _menu.height ? _menu.height / 6 : _menu.width / 6   // / 6
-                   color: "transparent"
+            ListView {
+                id: _chatPeopleListView
+                anchors.fill: parent
 
-                   ColumnLayout {
-                        anchors.fill: parent
+                model: _chatModel
 
-                        AppsIcons {                           //TODO
-                            Layout.alignment: Qt.AlignCenter
-                            width: 20
-                            height: 20
-
-                        }
-
-
-                   }
-               }
-
-                Rectangle {
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: _menu.width > _menu.height ? _menu.height * (2/3) : _menu.width * (2/3)
-                    radius: 10
+                delegate: Rectangle {
+                    id: _chatPeopleDelegate
+                    height: 60
+                    width: _chatPeopleListView.width
                     color: "blue"
 
+                    Text {
+                        anchors.centerIn: parent
+                        text: model.text
+                    }
 
-                }
-
-                Rectangle {
-
-                    Layout.fillHeight: true
-                    Layout.fillWidth: true
-                    color: "transparent"
                 }
 
             }
         }
+
+
+        Rectangle {
+            color: "transparent"
+            visible: false
+            Layout.preferredWidth: 60
+            Layout.minimumWidth: 20
+        }
+
+    }
+
+    ListModel {
+        id:_chatModel
+        ListElement {
+            //id: _elem
+
+            text: "lol"
+
+        }
+
+    }
+
+
 
 }

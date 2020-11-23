@@ -19,6 +19,7 @@ Page {
     PageChat {
         id: _chat
         visible: false
-        backColor: bgColor
+        backMainColor: bgColor
+        laySpacing: defMargin
     }
 }

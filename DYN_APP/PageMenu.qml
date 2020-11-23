@@ -42,6 +42,7 @@ Page {
                 onIconClicked: {
                     _stackView.push(_chat);
                 }
+                iconRadius: defRadius
 
             }
             AppsIcons {
@@ -53,6 +54,7 @@ Page {
                 border.color: fieldBgColor
                 border.width: 2
                 sourceForImage: "/images/images/games.png"
+                iconRadius: defRadius
             }
             AppsIcons {
                 Layout.column: 0
@@ -63,6 +65,7 @@ Page {
                 border.color: fieldBgColor
                 border.width: 2
                 sourceForImage: "/images/images/groups.png"
+                iconRadius: defRadius
 
             }
             AppsIcons {
@@ -73,6 +76,7 @@ Page {
                 backColor: mAreaPressed ? fieldBgColor : Qt.darker( bgColor, 1.1)
                 border.color: fieldBgColor
                 border.width: 2
+                iconRadius: defRadius
             }
 
         }

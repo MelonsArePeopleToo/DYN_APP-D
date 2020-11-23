@@ -10,10 +10,7 @@ Rectangle {
     property alias sourceForImage: _img.source
     property alias backColor: _root.color
     property bool mAreaPressed: _mouseArea.containsPress
-
-
-    radius: defRadius
-
+    property alias iconRadius: _root.radius
 
     MouseArea {
         id: _mouseArea
